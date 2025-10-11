@@ -1,0 +1,20 @@
+# Site settings
+title: "Моя база знаний"
+description: "Публичная документация/справочник"
+# Use the remote theme (works on GitHub Pages without local builds)
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+
+# UI options
+search_enabled: true
+color_scheme: nil  # light by default; you can set "dark" or add a switch via just-the-docs options
+
+# If you use a custom domain, you may set these (optional):
+# url: "https://kb.example.com"
+# baseurl: ""
+
+# Footer links (optional)
+aux_links:
+  "GitHub репозиторий":
+    - "//github.com/USERNAME/REPO"
