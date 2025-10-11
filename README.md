@@ -1,18 +1,33 @@
-# GitHub Pages Knowledge Base — Starter
+# 📚 Публичная база знаний
 
-This repo is a minimal starter for a public knowledge base on **GitHub Pages** using the **just-the-docs** theme.
+Личная коллекция полезных ресурсов, инструментов и идей, размещённая на **GitHub Pages** с использованием темы **just-the-docs**.
 
-## How to use
-1. Create a new repo on GitHub (public is fine).
-2. Download this ZIP, unzip, and commit all files to your repo.
-3. In **Settings → Pages**:
-   - Source: **Deploy from a branch**
-   - Branch: **main** and folder **/docs**
-   - Save.
-4. Wait for the first build to finish. You'll get a Pages URL.
-5. Edit the content in `docs/` and push changes.
+## 📑 Содержание
 
-## Optional
-- Connect your custom subdomain (e.g., `kb.example.com`) by adding a **CNAME** record to your Pages hostname. Then set the same name in **Settings → Pages → Custom domain**.
-- Toggle **Enforce HTTPS** in Pages settings.
-- Tweak navigation by editing front matter (`nav_order`, `has_children`, `parent`) in pages.
+- **📺 YouTube каналы** — подборка образовательных каналов
+- **🤖 Сервисы** — полезные AI-сервисы и платформы
+- **🚀 Стартапы** — список стартапов из акселератора a16z
+- **🔗 Ссылки** — интересные статьи и ресурсы
+- **🎯 Проекты** — идеи для реализации
+
+## Как использовать
+
+1. Посетите GitHub Pages сайт (ссылка появится после публикации)
+2. Используйте поиск для быстрого нахождения информации
+3. Навигация доступна в боковом меню
+
+## Технические детали
+
+Сайт работает на GitHub Pages с использованием Jekyll и темы just-the-docs. Все материалы находятся в папке `docs/`.
+
+### Обновление контента
+
+1. Редактируйте файлы в `docs/`
+2. Коммитьте изменения
+3. GitHub автоматически опубликует обновления
+
+### Опциональные настройки
+
+- Подключите свой домен через **Settings → Pages → Custom domain**
+- Включите **Enforce HTTPS** в настройках Pages
+- Настройте навигацию через front matter (`nav_order`, `has_children`, `parent`) в файлах
