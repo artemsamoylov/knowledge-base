@@ -52,3 +52,29 @@ nohup bundle exec jekyll serve --source docs --livereload > jekyll.log 2>&1 &
 - Подключите свой домен через **Settings → Pages → Custom domain**
 - Включите **Enforce HTTPS** в настройках Pages
 - Настройте навигацию через front matter (`nav_order`, `has_children`, `parent`) в файлах
+
+### Синхронизация с Obsidian
+
+Односторонняя синхронизация из хранилища Obsidian в каталог `docs/` настраивается скриптом `sync-from-obsidian.sh`.
+
+- **Источник (по умолчанию)**: `/Users/aasamo28/Documents/Obsidian v1/Публичная база знаний`
+- **Цель**: `docs/`
+- **Защищено от перезаписи и удаления**: `docs/assets/`, `docs/_config.yml`
+- **Исключения**: `.obsidian/`, `.git/`, `.DS_Store`, служебные и скрытые каталоги
+
+Запуск предварительной проверки (ничего не меняет):
+
+```bash
+./sync-from-obsidian.sh --dry-run
+```
+
+Фактическая синхронизация:
+
+```bash
+./sync-from-obsidian.sh
+```
+
+Примечания:
+- Синхронизация односторонняя: Obsidian → этот проект. Флаг `--delete` удалит в `docs/` то, чего нет в источнике (кроме исключённых файлов/папок).
+- Копируются `.md` и вложения (png, jpg, jpeg, gif, webp, svg, mp4, mov, mp3, wav, pdf).
+- При необходимости измените пути `SOURCE_DIR` и `TARGET_DIR` в `sync-from-obsidian.sh`.
