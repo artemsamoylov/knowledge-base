@@ -8,3 +8,10 @@
 .sass-cache/
 .jekyll-cache/
 _site/
+
+# Ruby/rbenv
+Gemfile.lock
+
+# Jekyll local server logs
+jekyll.log
+nohup.out

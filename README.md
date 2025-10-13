@@ -26,6 +26,27 @@
 2. Коммитьте изменения
 3. GitHub автоматически опубликует обновления
 
+### Локальный запуск (с rbenv)
+
+1. **Установите зависимости** (первый раз):
+   ```bash
+   bundle install
+   ```
+
+2. **Запустите сервер**:
+   ```bash
+   bundle exec jekyll serve --source docs --livereload
+   ```
+
+3. Откройте в браузере: **http://127.0.0.1:4000**
+
+**Быстрый запуск в фоне:**
+```bash
+nohup bundle exec jekyll serve --source docs --livereload > jekyll.log 2>&1 &
+```
+
+Для остановки сервера: `pkill -f jekyll` или `Ctrl+C` (если запущен в терминале).
+
 ### Опциональные настройки
 
 - Подключите свой домен через **Settings → Pages → Custom domain**
