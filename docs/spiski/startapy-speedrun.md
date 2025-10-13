@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Стартапы Speedrun SR005
-parent: Оглавление
 nav_order: 3
 ---
 

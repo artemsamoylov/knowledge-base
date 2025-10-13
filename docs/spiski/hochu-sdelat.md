@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Хочу сделать
-parent: Оглавление
 nav_order: 5
 ---
 

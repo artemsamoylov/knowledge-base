@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Сервисы
-parent: Оглавление
 nav_order: 2
 ---
 

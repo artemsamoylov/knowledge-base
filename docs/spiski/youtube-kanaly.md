@@ -1,7 +1,6 @@
 ---
 layout: default
 title: YouTube каналы
-parent: Оглавление
 nav_order: 1
 ---
 
