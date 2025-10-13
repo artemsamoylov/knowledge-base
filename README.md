@@ -68,7 +68,7 @@ nohup bundle exec jekyll serve --source docs --livereload > jekyll.log 2>&1 &
 ./sync-from-obsidian.sh --dry-run
 ```
 
-Фактическая синхронизация:
+Фактическая синхронизация (с авто-commit/push):
 
 ```bash
 ./sync-from-obsidian.sh
@@ -78,3 +78,4 @@ nohup bundle exec jekyll serve --source docs --livereload > jekyll.log 2>&1 &
 - Синхронизация односторонняя: Obsidian → этот проект. Флаг `--delete` удалит в `docs/` то, чего нет в источнике (кроме исключённых файлов/папок).
 - Копируются `.md` и вложения (png, jpg, jpeg, gif, webp, svg, mp4, mov, mp3, wav, pdf).
 - При необходимости измените пути `SOURCE_DIR` и `TARGET_DIR` в `sync-from-obsidian.sh`.
+- Скрипт автоматически делает `git add/commit/push` при наличии изменений (не в `--dry-run`).

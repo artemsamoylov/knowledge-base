@@ -58,3 +58,23 @@ rsync "${OPTS[@]}" "${EXCLUDE_ARGS[@]}" \
 find "$TARGET_DIR" -type d -empty -delete || true
 
 echo "[OK] Синхронизация завершена: $SOURCE_DIR -> $TARGET_DIR (dry-run=$DRY_RUN)"
+
+# Авто-коммит и пуш (пропускается в dry-run)
+if [[ $DRY_RUN -eq 0 ]]; then
+  REPO_DIR="$(cd "$(dirname \"$TARGET_DIR\")" && pwd)"
+  if [[ -d "$REPO_DIR/.git" ]]; then
+    pushd "$REPO_DIR" >/dev/null
+    if git status --porcelain | grep -q .; then
+      git add -A
+      COMMIT_MSG="feat(sync): обновление контента из Obsidian"
+      git commit -m "$COMMIT_MSG"
+      git push
+      echo "[OK] Изменения закоммичены и запушены."
+    else
+      echo "[OK] Нет изменений для коммита. Пуш пропущен."
+    fi
+    popd >/dev/null
+  else
+    echo "[WARN] Не git-репозиторий: $REPO_DIR — пропускаю коммит/пуш."
+  fi
+fi
