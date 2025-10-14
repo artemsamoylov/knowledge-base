@@ -5,7 +5,7 @@ set -euo pipefail
 # Используется rsync с удалением файлов, которых нет в источнике (чистое зеркало)
 # Исключаются служебные и конфигурационные файлы; защищаем docs/assets и docs/_config.yml
 
-SOURCE_DIR="/Users/aasamo28/Documents/Obsidian v1/Публичная база знаний"
+SOURCE_DIR="/Users/aasamo28/Documents/Obsidian v1/Публичная база знаний"
 TARGET_DIR="/Users/aasamo28/Documents/Github/knowledge-base/docs"
 
 DRY_RUN=0
@@ -61,7 +61,7 @@ echo "[OK] Синхронизация завершена: $SOURCE_DIR -> $TARGET
 
 # Авто-коммит и пуш (пропускается в dry-run)
 if [[ $DRY_RUN -eq 0 ]]; then
-  REPO_DIR="$(cd "$(dirname \"$TARGET_DIR\")" && pwd)"
+  REPO_DIR="$(cd "$(dirname "$TARGET_DIR")" && pwd)"
   if [[ -d "$REPO_DIR/.git" ]]; then
     pushd "$REPO_DIR" >/dev/null
     if git status --porcelain | grep -q .; then
@@ -78,3 +78,4 @@ if [[ $DRY_RUN -eq 0 ]]; then
     echo "[WARN] Не git-репозиторий: $REPO_DIR — пропускаю коммит/пуш."
   fi
 fi
+
